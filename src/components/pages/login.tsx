@@ -16,7 +16,8 @@ import stepTwo from '../../assets/images/login/step-2.svg'
 import stepThree from '../../assets/images/login/step-3.svg'
 import { cx } from '@linaria/core'
 
-export const loginHandler = () => reapitConnectBrowserSession.connectLoginRedirect()
+export const loginHandler = () =>
+  reapitConnectBrowserSession.connectLoginRedirect()
 
 export const Login: FC = () => {
   const [imageShown, setImageShown] = useState(1)
@@ -39,9 +40,21 @@ export const Login: FC = () => {
     <div className={loginContainer}>
       <div className={imageContainer}>
         <div className={loginImages}>
-          <img className={cx(loginImage, imageShown === 1 && loginImageVisible)} src={stepOne} alt="login graphic" />
-          <img className={cx(loginImage, imageShown === 2 && loginImageVisible)} src={stepTwo} alt="login graphic" />
-          <img className={cx(loginImage, imageShown === 3 && loginImageVisible)} src={stepThree} alt="login graphic" />
+          <img
+            className={cx(loginImage, imageShown === 1 && loginImageVisible)}
+            src={stepOne}
+            alt="login graphic"
+          />
+          <img
+            className={cx(loginImage, imageShown === 2 && loginImageVisible)}
+            src={stepTwo}
+            alt="login graphic"
+          />
+          <img
+            className={cx(loginImage, imageShown === 3 && loginImageVisible)}
+            src={stepThree}
+            alt="login graphic"
+          />
         </div>
       </div>
       <div className={wrapper}>
@@ -49,7 +62,14 @@ export const Login: FC = () => {
           <img src={connectImage} alt="Reapit Connect Graphic" />
         </BodyText>
         <BodyText className={loginLevel}>
-          <Button type="button" onClick={loginHandler} loading={false} intent="primary" disabled={false} fullWidth>
+          <Button
+            type="button"
+            onClick={loginHandler}
+            loading={false}
+            intent="primary"
+            disabled={false}
+            fullWidth
+          >
             Login
           </Button>
         </BodyText>

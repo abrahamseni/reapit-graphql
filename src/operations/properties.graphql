@@ -1,0 +1,19 @@
+query GetAllProperties {
+  GetProperties {
+    _embedded {
+      id
+      currency
+      selling {
+        price
+      }
+      address {
+        countryId
+        line1
+      }
+      bedrooms
+      bathrooms
+      description
+      negotiatorId
+    }
+  }
+}

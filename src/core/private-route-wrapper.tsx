@@ -7,8 +7,12 @@ import { Loader, MainContainer, PageContainer } from '@reapit/elements'
 
 export type PrivateRouteWrapperProps = {}
 
-export const PrivateRouteWrapper: FC<PrivateRouteWrapperProps> = ({ children }) => {
-  const { connectSession, connectInternalRedirect } = useReapitConnect(reapitConnectBrowserSession)
+export const PrivateRouteWrapper: FC<PrivateRouteWrapperProps> = ({
+  children,
+}) => {
+  const { connectSession, connectInternalRedirect } = useReapitConnect(
+    reapitConnectBrowserSession
+  )
   const location = useLocation()
   const currentUri = `${location?.pathname}${location?.search}`
 
@@ -31,7 +35,9 @@ export const PrivateRouteWrapper: FC<PrivateRouteWrapperProps> = ({ children }) 
       <Nav />
       <PageContainer>
         <PageContainer>
-          <Suspense fallback={<Loader label="Loading" fullPage />}>{children}</Suspense>
+          <Suspense fallback={<Loader label="Loading" fullPage />}>
+            {children}
+          </Suspense>
         </PageContainer>
       </PageContainer>
     </MainContainer>

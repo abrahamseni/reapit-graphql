@@ -83,6 +83,7 @@ module.exports = {
     'react-hooks/rules-of-hooks': 0,
     'react-hooks/exhaustive-deps': 0,
     'react/display-name': 0,
+    'no-console': 1,
   },
   settings: {
     react: {

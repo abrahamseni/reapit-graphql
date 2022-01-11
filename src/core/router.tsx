@@ -1,11 +1,11 @@
+import { createBrowserHistory } from 'history'
 import * as React from 'react'
 import {
+  Redirect,
   Route,
   Router as BrowserRouter,
   Switch,
-  Redirect,
 } from 'react-router-dom'
-import { createBrowserHistory } from 'history'
 import Routes from '../constants/routes'
 import PrivateRouteWrapper from './private-route-wrapper'
 
@@ -42,6 +42,9 @@ const AuthenticatedPage = React.lazy(() =>
 const GraphqlPage = React.lazy(() =>
   catchChunkError(() => import('../components/pages/graphql'))
 )
+const SamplePage = React.lazy(() =>
+  catchChunkError(() => import('../components/pages/sample'))
+)
 
 const Router = () => (
   <BrowserRouter history={history}>
@@ -52,6 +55,7 @@ const Router = () => (
           <Switch>
             <Route exact path={Routes.HOME} component={AuthenticatedPage} />
             <Route path={Routes.GRAPHQL} component={GraphqlPage} />
+            <Route path={Routes.SAMPLE} component={SamplePage} />
           </Switch>
         </PrivateRouteWrapper>
         <Redirect to={Routes.LOGIN} />

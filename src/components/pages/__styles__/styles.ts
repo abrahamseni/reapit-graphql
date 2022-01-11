@@ -85,3 +85,16 @@ export const loginImages = css`
   width: auto;
   position: relative;
 `
+
+export const flex = css`
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+`
+export const flexGap = css`
+  gap: 8px;
+`
+
+export const redText = css`
+  color: var(--intent-danger);
+`
